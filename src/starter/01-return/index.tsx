@@ -1,4 +1,7 @@
 function Component() {
+  return null;
+  return "Hello";
+
   return (
     <div>
       <h2>React & Typescript</h2>

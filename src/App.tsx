@@ -1,7 +1,9 @@
+import Component from "./starter/02-props";
+
 function App() {
   return (
     <main>
-      <h2>React & Typescript</h2>
+      <Component name='Tonmoy' id={1821348}/>
     </main>
   );
 }
