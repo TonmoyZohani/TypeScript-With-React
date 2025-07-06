@@ -4,13 +4,19 @@ type Theme = "light" | "dark" | "system";
 
 type ThemeProviderState = {
   theme: Theme;
-  setTheme: (theme: Theme) => void;
+  setTheme: React.Dispatch<React.SetStateAction<Theme>>;
 };
 
 const ThemeProviderContext = createContext<ThemeProviderState | undefined>(undefined);
 
-export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [theme, setTheme] = useState<Theme>();
+type ThemeProviderProps = {
+  children: React.ReactNode;
+  defaultTheme?: Theme;
+};
+
+export const ThemeProvider = ({ children, defaultTheme = "system" }: ThemeProviderProps) => {
+  const [theme, setTheme] = useState<Theme>(defaultTheme);
+
   return (
     <ThemeProviderContext.Provider value={{ theme, setTheme }}>
       {children}
