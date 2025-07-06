@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 type Link = {
   id: number;
@@ -9,38 +9,41 @@ type Link = {
 const navLinks: Link[] = [
   {
     id: 1,
-    url: 'https://reactjs.org',
-    text: 'react docs',
+    url: "https://reactjs.org",
+    text: "react docs",
   },
   {
     id: 2,
-    url: 'https://reactrouter.com',
-    text: 'react router docs',
+    url: "https://reactrouter.com",
+    text: "react router docs",
   },
   {
     id: 3,
-    url: 'https://reacttraining.com',
+    url: "https://reacttraining.com",
     // remove text property to see the error
-    text: 'react training',
+    text: "react training",
   },
 ];
 
-function Component() {
+const Component = () => {
   const [text, setText] = useState('shakeAndBake');
   const [number, setNumber] = useState(1);
   const [list, setList] = useState<string[]>([]);
   const [links, setLinks] = useState<Link[]>(navLinks);
+
   return (
     <div>
       <h2 className='mb-1'>hello from typescript</h2>
       <button
         className='btn btn-center'
         onClick={() => {
-          // setText(1);
-          // setNumber('hello');
-          // setList([1, 3]);
-          // setList(['hello', 'world']);
-          // setLinks([...links, { id: 4, url: 'hello', someValue: 'hello' }])
+          // Invalid examples (commented for learning):
+          // setText(1); // ❌
+          // setNumber('hello'); // ❌
+          // setList([1, 3]); // ❌
+          // setLinks([...links, { id: 4, url: 'hello', someValue: 'hello' }]); // ❌
+
+          // ✅ Valid example
           setLinks([...links, { id: 4, url: 'hello', text: 'hello' }]);
         }}
       >
@@ -48,5 +51,6 @@ function Component() {
       </button>
     </div>
   );
-}
+};
+
 export default Component;
