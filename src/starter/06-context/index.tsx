@@ -1,4 +1,18 @@
+import { useTheme, ThemeProvider } from "./context";
+
+const ParentComponent = () => {
+  return (
+    <ThemeProvider>
+      <Component />
+    </ThemeProvider>
+  );
+};
+
 function Component() {
+  const theme = useTheme();
+
+  console.log(theme);
+
   return (
     <div>
       <h2>React & Typescript</h2>
@@ -6,4 +20,4 @@ function Component() {
     </div>
   );
 }
-export default Component;
+export default ParentComponent;
