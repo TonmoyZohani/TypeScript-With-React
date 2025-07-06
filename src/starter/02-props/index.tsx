@@ -1,13 +1,12 @@
-function Component({ name, id }: { name: string; id: number }) {
-  return (
-    <div>
-      <h2>Name:{name}</h2>
-      <h2>Id:{id}</h2>
-    </div>
-  );
-}
-export default Component;
-
+// function Component({ name, id }: { name: string; id: number }) {
+//   return (
+//     <div>
+//       <h2>Name:{name}</h2>
+//       <h2>Id:{id}</h2>
+//     </div>
+//   );
+// }
+// export default Component;
 
 // type Props = {
 //   name: string;
@@ -23,4 +22,20 @@ export default Component;
 //   );
 // }
 
-// export default Component;
+type ComponentProps = {
+  name: string;
+  id: number;
+  children?: React.ReactNode;
+};
+
+function Component(props: ComponentProps): JSX.Element {
+  return (
+    <div>
+      <h2>Name: {props.name}</h2>
+      <h3>Id:{props.id}</h3>
+      <div>{props.children}</div>
+    </div>
+  );
+}
+
+export default Component;
