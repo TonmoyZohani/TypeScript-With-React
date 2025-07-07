@@ -1,4 +1,10 @@
+import { useReducer } from "react";
+import { initialState } from "./reducer";
+
+
 function Component() {
+
+  const [state,dispatch] = useReducer(counterReducer,initialState)
   return (
     <div>
       <h2>React & Typescript</h2>

@@ -1,22 +1,32 @@
-import { useTheme, ThemeProvider } from "./context";
+import { useTheme, ThemeProvider } from './context';
 
-const ParentComponent = () => {
+function ParentComponent() {
   return (
     <ThemeProvider>
       <Component />
     </ThemeProvider>
   );
-};
+}
 
 function Component() {
-  const theme = useTheme();
-
-  console.log(theme);
+  const context = useTheme();
+  console.log(context);
 
   return (
     <div>
-      <h2>React & Typescript</h2>
-      <h2>Context API</h2>
+      <h2>random component</h2>
+      <button
+        onClick={() => {
+          if (context.theme === 'dark') {
+            context.setTheme('system');
+            return;
+          }
+          context.setTheme('dark');
+        }}
+        className='btn btn-center'
+      >
+        toggle theme
+      </button>
     </div>
   );
 }
