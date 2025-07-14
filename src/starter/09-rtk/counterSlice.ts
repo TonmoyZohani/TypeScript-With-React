@@ -26,5 +26,8 @@ export const counterSlice = createSlice({
     reset: (state) => {
       state.count = 0;
     },
+    setStatus: (state, action: PayloadAction<CounterStatus>) => {
+      state.status = action.payload;
+    },
   },
 });
