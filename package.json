@@ -1,15 +1,25 @@
 {
-  "name": "typescript",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
+  "name": "typescript-tutorial",
+  "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview"
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "watch": "tsc -w"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TonmoyZohani/TypeScript-With-React.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TonmoyZohani/TypeScript-With-React/issues"
+  },
+  "homepage": "https://github.com/TonmoyZohani/TypeScript-With-React#readme",
+  "description": "",
   "devDependencies": {
-    "typescript": "^5.5.3",
-    "vite": "^5.4.1"
+    "typescript": "^5.9.3"
   }
 }
